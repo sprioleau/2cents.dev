@@ -1,0 +1,27 @@
+{
+	"background_color": "#007c89",
+	"description": "2¢ents.dev - Share your thoughts, whims and opinions with humanity.",
+	"display": "fullscreen",
+	"icons": [
+		{
+			"sizes": "512x512",
+			"src": "/images/logo.svg",
+			"type": "image/svg+xml"
+		},
+		{
+			"sizes": "192x192",
+			"src": "/images/logo_192px.png",
+			"type": "image/png"
+		},
+		{
+			"sizes": "512x512",
+			"src": "/images/logo_512px.png",
+			"type": "image/png"
+		}
+	],
+	"id": "/",
+	"name": "2¢ents.dev - Add your thoughts to the conversation",
+	"short_name": "2¢ents.dev",
+	"start_url": "/",
+	"theme_color": "#007c89"
+}

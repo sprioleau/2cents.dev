@@ -1,8 +1,9 @@
+import { API_ROOT_URL } from "../../constants/apiUrl";
 import { Message, RequestResult } from "../../types";
 
 export default async function deleteMessageById(id: Message["id"]): Promise<RequestResult<unknown>> {
 	try {
-		const response = await fetch("http://localhost:3001/deleteComment", {
+		const response = await fetch(`${API_ROOT_URL}/api/deleteComment`, {
 			method: "DELETE",
 			headers: {
 				"Content-Type": "application/json",

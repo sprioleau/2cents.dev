@@ -1,8 +1,9 @@
+import { API_ROOT_URL } from "../../constants/apiUrl";
 import { Message, RequestResult } from "../../types";
 
 export default async function getAllMessages(): Promise<RequestResult<Message[]>> {
 	try {
-		const response = await fetch("http://localhost:3001/getComments");
+		const response = await fetch(`${API_ROOT_URL}/api/getComments`);
 
 		if (!response.ok) {
 			throw new Error("There was an error while attempting to retrieve messages");

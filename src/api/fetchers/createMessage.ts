@@ -1,3 +1,4 @@
+import { API_ROOT_URL } from "../../constants/apiUrl";
 import { z } from "zod";
 import { messageFormDataSchema } from "../../lib/zod/schemas";
 import { Message, RequestResult } from "../../types";
@@ -7,7 +8,7 @@ export default async function createMessage({
 	message,
 }: z.infer<typeof messageFormDataSchema>): Promise<RequestResult<Message[]>> {
 	try {
-		const response = await fetch("http://localhost:3001/createComment", {
+		const response = await fetch(`${API_ROOT_URL}/api/createComment`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",

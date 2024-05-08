@@ -31,6 +31,7 @@ export default function Message({ message: { id, name, message, created: created
 					<span className={styles["timestamp"]}>{getRelativeTime(createdAt)}</span>
 				</div>
 				<Button
+					title="Delete"
 					onClick={() => handleDeleteMessage(id)}
 					addedClassName={styles["delete-button"]}
 				>

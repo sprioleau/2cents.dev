@@ -1,40 +1,39 @@
 class Comment {
-  constructor(dataAccessObject) {
-    this.dataAccessObject = dataAccessObject;
-  }
+	constructor(dataAccessObject) {
+		this.dataAccessObject = dataAccessObject;
+	}
 
-  createTable() {
-    const sql = `
+	createTable() {
+		const sql = `
     CREATE TABLE IF NOT EXISTS comments (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT,
       message TEXT,
       created DATETIME DEFAULT CURRENT_TIMESTAMP)`;
-    return this.dataAccessObject.run(sql);
-  }
+		return this.dataAccessObject.run(sql);
+	}
 
-  deleteComments() {
-    const sql = 'DELETE FROM comments';
-    return this.dataAccessObject.run(sql);
-  }
+	deleteComments() {
+		const sql = "DELETE FROM comments";
+		return this.dataAccessObject.run(sql);
+	}
 
-  createComment({ name, message }) {
-    return this.dataAccessObject.run(
-      'INSERT INTO comments (name, message) VALUES (?, ?)',
-      [name, message]
-    );
-  }
+	deleteComment(id) {
+		const sql = "DELETE FROM comments WHERE id = ?";
+		return this.dataAccessObject.run(sql, [id]);
+	}
 
-  getComment(id) {
-    return this.dataAccessObject.get(
-      'SELECT * FROM comments WHERE id = ?',
-      [id]
-    );
-  }
+	createComment({ name, message }) {
+		return this.dataAccessObject.run("INSERT INTO comments (name, message) VALUES (?, ?)", [name, message]);
+	}
 
-  getComments() {
-    return this.dataAccessObject.all('SELECT * FROM comments');
-  }
+	getComment(id) {
+		return this.dataAccessObject.get("SELECT * FROM comments WHERE id = ?", [id]);
+	}
+
+	getComments() {
+		return this.dataAccessObject.all("SELECT * FROM comments ORDER BY created DESC");
+	}
 }
 
 module.exports = Comment;

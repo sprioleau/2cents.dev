@@ -14,11 +14,15 @@ _Share your thoughts, whims and opinions with humanity_
 
 [Node.js](https://nodejs.org/en/download) version 18 or later
 
-Clone this repo
+### Steps to Run Application
+
+#### Clone this repo
 
 ```bash
 git clone https://github.com/sprioleau/2cents.dev.git
 ```
+
+#### Insall Dependencies
 
 From the root directory, run the following command to install server dependencies.
 
@@ -26,30 +30,36 @@ From the root directory, run the following command to install server dependencie
 npm install
 ```
 
+#### Seed Database (optional)
+
 I wrote a database seeding script (`server/seed.js`) that you can run with the following command. This will add a few messages to the UI for testing out the application.
 
 ```shell
 npm run db:seed
 ```
 
-From the `client` directory, run the following command to install client dependencies.
+#### Start Application
 
-```shell
-cd client; npm install
-```
-
-From the root directory, run the application
-
-This will run the frontend on port `3000` and the backend server on port `3001`.
+Next, run the application locally with the following command.
 
 ```shell
 npm run dev
 ```
 
-Run the application test suite
+This will run the frontend on port `3000` and the backend server on port `3001`.
+
+### Run the application test suite
+
+Run the tests and view results in terminal.
 
 ```shell
-npm run test:ui # or simply "npm run test" if you don't want the playwright UI
+npm run test
+```
+
+Run the tests and view the results in an interactive UI.
+
+```shell
+npm run test:ui
 ```
 
 ## Feature Summary

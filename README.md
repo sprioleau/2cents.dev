@@ -1,66 +1,63 @@
-# Front-end Choose Your Own Adventure Take-Home
+# 2¢cents.dev
 
-Design and build a comments feed that displays all comments and notifies a user in real-time when new comments are added.
+_Share your thoughts, whims and opinions with humanity_
 
-Here is the data schema for a Comment:
-* id: INTEGER
-* name: TEXT
-* created: DATETIME
-* message: TEXT
+## Installation
 
-Here are the API endpoints:
-* Create a comment: /createComment (POST)
-* Retrieve all comments: /getComments (GET)
-* Retrieve a comment: /getComment (GET)
-* Delete all comments: /deleteComments (DELETE)
-  * This is useful for purging data
+### System Requirements
 
-This is a basic wireframe, you can change the layout. While you won't be screened as a product designer, make sure you build a good user experience. If you decide to use a third-party design system, be prepared to discuss your decision.
+Node.js version 18 or later
 
-![Basic wireframe](wireframe.png)
+From the root directory, run the following command to install server dependencies.
 
-Please write unit tests and handle errors where you see fit.
-
-## Engineering Style
-
-We do not expect you to have expertise in all the topics that encapsulate front-end web development. We recognize that some folks are specialists and others are generalists!
-
-### Specialist
-
-If there's a particular topic you enjoy, you can focus your assignment solution on that!
-
-Some examples include:
-* Performance optimizations
-* Accessibility
-* Integration testing
-
-### Generalist
-
-If you're a generalist, you can focus more on building the minimum viable product described above with the wireframe!
-
-## Interview Details
-
-We have already set up an API client for a Node Express server that stores comments in SQLite.
-
-You have the option of doing the assignment with or without a front-end JS framework.
-
-If you decide to use a framework, we recommend the following boilerplates:
-* [facebook/create-react-app](https://github.com/facebook/create-react-app)
-* [vuejs/vue-cli](https://github.com/vuejs/vue-cli)
-* [angular/angular-cli](https://github.com/angular/angular-cli)
-* [ember-cli/ember-cli](https://github.com/ember-cli/ember-cli)
-
-Be prepared to have a discussion about your implementation. Here are some example discussion questions:
-* How can you optimize fetching new comments in real-time?
-* Are there any restrictions we should place on the comment input?
-
-We recommend spending up to four hours on this assignment. If you don't get every piece you hoped completed done in the timeframe, that's alright! We'll be having an hour long discussion on your thought processes and where you might spend more time, and that discussion is a key part of our evaluation!
-
-## Usage
-
-### Run in Development
-
+```shell
+npm install
 ```
-$ npm install
-$ npm run dev
+
+From the `client` directory, run the following command to install client dependencies.
+
+```shell
+cd client; npm install
 ```
+
+Run the application
+
+This will run the frontend on port `3000` and the backend server on port `3001`.
+
+```shell
+npm run dev
+```
+
+## Feature Summary
+
+- [x] 🎨 Fully custom design inspired by MailChimp brand colors
+- [x] ⚡️ Performant sorting of messages at database level
+- [x] ⚛️ React Hooks
+- [x] 💫 Subtle animations
+- [x] Tested
+
+## Improvement Ideas
+
+With more time given to this project, I would consider the following ideas and features.
+
+- Bring in Framer Motion for tasteful animations that add delight
+- Add a users table secured with a user authentication strategy and data access controls
+- Break out code into small commits and use PRs to explain intention
+- Update message timestamps (`created` field) on an interval so that UI updates without interaction
+- Use TanStack Query for fetching on window focus and add polling interval
+- Add ability to edit messages
+- Better error handling with toast messages
+- ...others
+<!-- - Extend the API -->
+
+## Findings
+
+### Cross-origin Resource Sharing (CORS)
+
+I needed to add the express `cors` middleware in order to allow the frontend running at `http://localhost:3000` to communicate with the backend at `http://localhost:3001`.
+
+## Considerations
+
+### Framework
+
+When thinking about this craft assignment, I considered using a full-stack framework with which I am comfortable working. For me, that is Next.js. However, the testing story for end-to-end tests is still a work in progress, so I stuck with a React frontend and an Express.js backend.

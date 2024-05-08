@@ -1,8 +1,18 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 
-test("renders learn react link", () => {
+it("renders title", () => {
 	render(<App />);
-	const linkElement = screen.getByText(/learn react/i);
-	expect(linkElement).toBeDefined();
+	const subtitle = screen.getByText(/Share your thoughts/i);
+
+	expect(subtitle).toBeDefined();
+});
+
+it("renders section titles", () => {
+	render(<App />);
+	const newMessageSectionTitle = screen.getByText(/New Message/i);
+	const MessagesSectionTitle = screen.getByText(/New Message/i);
+
+	expect(newMessageSectionTitle).toBeDefined();
+	expect(MessagesSectionTitle).toBeDefined();
 });

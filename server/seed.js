@@ -23,13 +23,15 @@ async function seed() {
 		const dataAccessObject = new DataAccessObject("./database.sqlite3");
 		const comment = new Comment(dataAccessObject);
 
-		comment.createTable().catch((error) => {
+		await comment.createTable().catch((error) => {
 			console.log(`Error: ${JSON.stringify(error)}`);
 		});
 
-		messages.forEach((message) => {
-			comment.createComment(message);
-		});
+		await comment.deleteComments();
+
+		for (let i = 0; i < messages.length; i++) {
+			await comment.createComment(messages[i]);
+		}
 
 		console.log("🌱 Successfully seeded database");
 	} catch (caughtError) {

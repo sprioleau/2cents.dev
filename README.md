@@ -6,7 +6,7 @@ _Share your thoughts, whims and opinions with humanity_
 
 ### System Requirements
 
-Node.js version 18 or later
+[Node.js](https://nodejs.org/en/download) version 18 or later
 
 From the root directory, run the following command to install server dependencies.
 
@@ -28,13 +28,19 @@ This will run the frontend on port `3000` and the backend server on port `3001`.
 npm run dev
 ```
 
+Run the application test suite
+
+```shell
+npm run test:ui # or simply "npm run test" if you don't want the playwright UI
+```
+
 ## Feature Summary
 
 - [x] 🎨 Fully custom design inspired by MailChimp brand colors
 - [x] ⚡️ Performant sorting of messages at database level
 - [x] ⚛️ React Hooks
 - [x] 💫 Subtle animations
-- [x] Tested
+- [x] 🧪 Fully configured end-to-end test suite
 
 ## Improvement Ideas
 
@@ -47,6 +53,7 @@ With more time given to this project, I would consider the following ideas and f
 - Use TanStack Query for fetching on window focus and add polling interval
 - Add ability to edit messages
 - Better error handling with toast messages
+- Add unit tests for utility functions
 - ...others
 <!-- - Extend the API -->
 

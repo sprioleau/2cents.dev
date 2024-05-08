@@ -6,7 +6,7 @@
 	"private": true,
 	"main": "server/index.js",
 	"scripts": {
-		"db:seed": "cd server && node seed.js",
+		"db:seed": "node server/seed.js",
 		"dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start\"",
 		"test": "playwright test",
 		"test:ui": "playwright test --ui",

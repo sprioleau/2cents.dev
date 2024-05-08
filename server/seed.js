@@ -20,7 +20,12 @@ const messages = [
 
 async function seed() {
 	try {
-		const comment = new Comment(new DataAccessObject("../database.sqlite3"));
+		const dataAccessObject = new DataAccessObject("./database.sqlite3");
+		const comment = new Comment(dataAccessObject);
+
+		comment.createTable().catch((error) => {
+			console.log(`Error: ${JSON.stringify(error)}`);
+		});
 
 		messages.forEach((message) => {
 			comment.createComment(message);

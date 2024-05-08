@@ -20,14 +20,16 @@ comment.createTable().catch((error) => {
 	console.log(`Error: ${JSON.stringify(error)}`);
 });
 
-app.post("/api/createComment", function (request, response) {
+const apiRouter = express.Router();
+
+apiRouter.post("/createComment", function (request, response) {
 	const { body } = request;
 	comment.createComment(body).then((result) => {
 		response.send(result);
 	});
 });
 
-app.get("/api/getComment", function (request, response) {
+apiRouter.get("/getComment", function (request, response) {
 	const { body } = request;
 	const { id } = body;
 	comment.getComment(id).then((result) => {
@@ -35,13 +37,13 @@ app.get("/api/getComment", function (request, response) {
 	});
 });
 
-app.get("/api/getComments", function (request, response) {
+apiRouter.get("/getComments", function (request, response) {
 	comment.getComments().then((result) => {
 		response.send(result);
 	});
 });
 
-app.delete("/api/deleteComment", function (request, response) {
+apiRouter.delete("/deleteComment", function (request, response) {
 	const { body } = request;
 	const { id } = body;
 
@@ -50,7 +52,7 @@ app.delete("/api/deleteComment", function (request, response) {
 	});
 });
 
-app.delete("/api/deleteComments", function (request, response) {
+apiRouter.delete("/deleteComments", function (request, response) {
 	comment.deleteComments().then((result) => {
 		response.send(result);
 	});
@@ -58,7 +60,9 @@ app.delete("/api/deleteComments", function (request, response) {
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-app.use(express.static("client/build"));
+app.use("/api", apiRouter);
+
+app.use(express.static("build"));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {

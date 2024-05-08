@@ -58,10 +58,7 @@ apiRouter.delete("/deleteComments", function (request, response) {
 	});
 });
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
-
 app.use("/api", apiRouter);
-
 app.use(express.static("build"));
 
 // http://expressjs.com/en/starter/basic-routing.html
@@ -69,3 +66,5 @@ app.get("/", function (request, response) {
 	const rootDir = __dirname.replace("/server", "");
 	response.sendFile(`${rootDir}/build/index.html`);
 });
+
+app.listen(port, () => console.log(`🎧 Listening on port ${port}`));

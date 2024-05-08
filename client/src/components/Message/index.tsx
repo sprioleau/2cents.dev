@@ -28,10 +28,7 @@ export default function Message({ message: { id, name, message, created: created
 				<div className={styles["byline"]}>
 					<span className={styles["author"]}>{name}</span>
 					<span> • </span>
-					<span className={styles["timestamp"]}>
-						<span> • </span>
-						{getRelativeTime(createdAt)}
-					</span>
+					<span className={styles["timestamp"]}>{getRelativeTime(createdAt)}</span>
 				</div>
 				<Button
 					onClick={() => handleDeleteMessage(id)}

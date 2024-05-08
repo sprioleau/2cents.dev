@@ -4,7 +4,7 @@
 	"private": true,
 	"main": "server/index.js",
 	"scripts": {
-		"test": "cd client && npm test",
+		"test": "cd client && npm run test:ui",
 		"start": "cd client && npm start",
 		"server": "nodemon server/index.js",
 		"dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start\""

@@ -9,7 +9,7 @@
 		"test": "cd client && npm run test:ui",
 		"start": "cd client && npm start",
 		"server": "nodemon server/index.js",
-		"build": "cd client && npm run build"
+		"build": "cd client && npm install && npm run build"
 	},
 	"dependencies": {
 		"cors": "^2.8.5",

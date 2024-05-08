@@ -1,12 +1,24 @@
+![Social Card][social-card-url]
+
 # 2¢cents.dev
 
 _Share your thoughts, whims and opinions with humanity_
+
+## Screenshots
+
+![Homepage Screenshot][homepage-screenshot-url]
 
 ## Installation
 
 ### System Requirements
 
 [Node.js](https://nodejs.org/en/download) version 18 or later
+
+Clone this repo
+
+```bash
+git clone https://github.com/sprioleau/2cents.dev.git
+```
 
 From the root directory, run the following command to install server dependencies.
 
@@ -26,7 +38,7 @@ From the `client` directory, run the following command to install client depende
 cd client; npm install
 ```
 
-Run the application
+From the root directory, run the application
 
 This will run the frontend on port `3000` and the backend server on port `3001`.
 
@@ -63,8 +75,6 @@ With more time given to this project, I would consider the following ideas and f
 - Add unit tests for utility functions
 - Revisit button styles and states
 - Check application with assistive technologies
-- ...others
-<!-- - Extend the API -->
 
 ## Findings
 
@@ -77,3 +87,8 @@ I needed to add the express `cors` middleware in order to allow the frontend run
 ### Framework
 
 When thinking about this craft assignment, I considered using a full-stack framework with which I am comfortable working. For me, that is Next.js. However, the testing story for end-to-end tests is still a work in progress, so I stuck with a React frontend and an Express.js backend.
+
+<!-- Project Details -->
+
+[social-card-url]: https://github.com/sprioleau/2cents.dev/blob/main/client/public/images/social-card.png?raw=true "Social Card"
+[homepage-screenshot-url]: https://github.com/sprioleau/2cents.dev/blob/main/client/public/images/homepage-screenshot.png?raw=true "Homepage Screenshot"

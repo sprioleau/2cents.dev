@@ -63,5 +63,5 @@ app.use(express.static("client/build"));
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
 	const rootDir = __dirname.replace("/server", "");
-	response.sendFile(`${rootDir}/client/build/index.html`);
+	response.sendFile(`${rootDir}/build/index.html`);
 });

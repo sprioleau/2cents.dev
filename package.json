@@ -6,21 +6,38 @@
 	"scripts": {
 		"db:seed": "cd server && node seed.js",
 		"dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start\"",
-		"test": "cd client && npm run test:ui",
-		"start": "cd client && npm start",
+		"test": "playwright test",
+		"test:ui": "playwright test --ui",
+		"start": "react-scripts start",
 		"server": "nodemon server/index.js",
-		"build": "cd client && npm install && npm run build"
+		"build": "react-scripts build"
 	},
 	"dependencies": {
 		"cors": "^2.8.5",
-		"sqlite3": "^5.1.6"
+		"dayjs": "^1.11.11",
+		"lucide-react": "^0.378.0",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-scripts": "5.0.1",
+		"sqlite3": "^5.1.6",
+		"zod": "^3.23.6"
 	},
 	"devDependencies": {
 		"@babel/plugin-transform-modules-commonjs": "^7.23.0",
+		"@playwright/test": "^1.44.0",
+		"@testing-library/jest-dom": "^6.4.5",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^13.5.0",
+		"@types/node": "^16.18.96",
+		"@types/react": "^18.3.1",
+		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react": "^4.2.1",
 		"body-parser": "^1.20.2",
 		"concurrently": "^4.1.0",
 		"express": "^4.18.2",
-		"nodemon": "^1.18.10"
+		"nodemon": "^1.18.10",
+		"sass": "^1.76.0",
+		"typescript": "^4.9.5"
 	},
 	"keywords": [],
 	"description": "",

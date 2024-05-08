@@ -14,6 +14,12 @@ From the root directory, run the following command to install server dependencie
 npm install
 ```
 
+I wrote a database seeding script (`server/seed.js`) that you can run with the following command. This will add a few messages to the UI for testing out the application.
+
+```shell
+npm run db:seed
+```
+
 From the `client` directory, run the following command to install client dependencies.
 
 ```shell
@@ -41,6 +47,7 @@ npm run test:ui # or simply "npm run test" if you don't want the playwright UI
 - [x] ⚛️ React Hooks
 - [x] 💫 Subtle animations
 - [x] 🧪 Fully configured end-to-end test suite
+- [x] 🏗️ Semantic HTML
 
 ## Improvement Ideas
 
@@ -54,6 +61,8 @@ With more time given to this project, I would consider the following ideas and f
 - Add ability to edit messages
 - Better error handling with toast messages
 - Add unit tests for utility functions
+- Revisit button styles and states
+- Check application with assistive technologies
 - ...others
 <!-- - Extend the API -->
 

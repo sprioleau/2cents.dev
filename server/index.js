@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const path = require("path");
 
 const DataAccessObject = require("./dataAccessObject");
 const Comment = require("./comment");
@@ -57,9 +58,10 @@ app.delete("/deleteComments", function (request, response) {
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-app.use(express.static("public"));
+app.use(express.static("client/build"));
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function (request, response) {
-	response.json({ message: "Hello from the API!" });
+	const rootDir = __dirname.replace("/server", "");
+	response.sendFile(`${rootDir}/client/build/index.html`);
 });

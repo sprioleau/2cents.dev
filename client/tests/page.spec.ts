@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 test("has correct page title and headings", async ({ page }) => {
 	await page.goto("http://127.0.0.1:3000");
-	await expect(page).toHaveTitle(/2¢ents/);
+	await expect(page).toHaveTitle(/2cents/);
 	await expect(page.getByRole("heading", { name: "Add your 2" })).toBeVisible();
 	await expect(page.getByText("Share your thoughts, whims and opinions with humanity")).toBeVisible();
 });

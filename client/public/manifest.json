@@ -1,6 +1,6 @@
 {
 	"background_color": "#007c89",
-	"description": "2¢ents.dev - Share your thoughts, whims and opinions with humanity.",
+	"description": "2cents.dev - Share your thoughts, whims and opinions with humanity.",
 	"display": "fullscreen",
 	"icons": [
 		{
@@ -20,8 +20,8 @@
 		}
 	],
 	"id": "/",
-	"name": "2¢ents.dev - Add your thoughts to the conversation",
-	"short_name": "2¢ents.dev",
+	"name": "2cents.dev - Add your thoughts to the conversation",
+	"short_name": "2cents.dev",
 	"start_url": "/",
 	"theme_color": "#007c89"
 }

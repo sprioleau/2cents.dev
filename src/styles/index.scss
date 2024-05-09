@@ -113,6 +113,11 @@ a {
 	color: inherit;
 	text-decoration: none;
 	display: inline-block;
+
+	&:focus {
+		outline: 3px solid var(--color-pumpkin);
+		outline-offset: 3px;
+	}
 }
 
 input,
@@ -133,7 +138,8 @@ textarea {
 	}
 
 	&:focus {
-		box-shadow: 0 0 0 3px var(--color-ui-bg), 0 0 0 6px var(--color-pumpkin);
+		outline: 3px solid var(--color-pumpkin);
+		outline-offset: 3px;
 	}
 }
 

@@ -2,7 +2,7 @@
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
-	padding: var(--space-1) var(--space-6);
+	padding: var(--space-2) var(--space-6);
 
 	@media screen and (max-width: 800px) {
 		flex-direction: column;
@@ -15,6 +15,12 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-radius: var(--border-radius-sm);
+
+	&:focus {
+		outline: 3px solid var(--color-pumpkin);
+		outline-offset: 3px;
+	}
 }
 
 .byline {
@@ -35,5 +41,6 @@
 		gap: var(--space-1);
 		font-family: var(--ff-bold);
 		color: var(--color-kale);
+		border-radius: var(--border-radius-sm);
 	}
 }

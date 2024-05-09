@@ -1,5 +1,5 @@
 {
-	"background_color": "#007c89",
+	"background_color": "#efeeea",
 	"description": "2cents.dev - Share your thoughts, whims and opinions with humanity.",
 	"display": "fullscreen",
 	"icons": [
@@ -23,5 +23,5 @@
 	"name": "2cents.dev - Add your thoughts to the conversation",
 	"short_name": "2cents.dev",
 	"start_url": "/",
-	"theme_color": "#007c89"
+	"theme_color": "#efeeea"
 }

@@ -91,7 +91,9 @@ body {
 	overflow-x: hidden;
 	font-family: var(--ff-regular);
 	background-image: url("../assets/dots.svg");
+	background-color: var(--color-ui-bg);
 	font-size: var(--root-font-size);
+	overscroll-behavior: none;
 }
 
 h1,
@@ -105,10 +107,6 @@ ul,
 ol,
 li {
 	list-style: none;
-}
-
-body {
-	background-color: var(--color-ui-bg);
 }
 
 a {

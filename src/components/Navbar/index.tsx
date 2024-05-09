@@ -24,7 +24,7 @@ export default function Navbar() {
 					<a href="https://github.com/sprioleau">
 						<span>@sprioleau</span>{" "}
 						<span
-							aria-role="img"
+							role="img"
 							aria-label="GitHub logo"
 						>
 							<Github />

@@ -22,7 +22,13 @@ export default function Navbar() {
 				<li className={styles["byline"]}>
 					by{" "}
 					<a href="https://github.com/sprioleau">
-						<span>@sprioleau</span> <Github />
+						<span>@sprioleau</span>{" "}
+						<span
+							aria-role="img"
+							aria-label="GitHub logo"
+						>
+							<Github />
+						</span>
 					</a>
 				</li>
 			</ul>

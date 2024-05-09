@@ -131,5 +131,5 @@ A link to the Figma design file for this application is below.
 
 <!-- Project Details -->
 
-[social-card-url]: https://github.com/sprioleau/2cents.dev/blob/main/client/public/images/social-card.png?raw=true "Social Card"
-[homepage-screenshot-url]: https://github.com/sprioleau/2cents.dev/blob/main/client/public/images/homepage-screenshot.png?raw=true "Homepage Screenshot"
+[social-card-url]: https:2cents.dev/images/social-card.png "Social Card"
+[homepage-screenshot-url]: https:2cents.dev/images/homepage-screenshot.png "Homepage Screenshot"

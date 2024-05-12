@@ -117,5 +117,5 @@ A link to the Figma design file for this application is below.
 
 <!-- Project Details -->
 
-[social-card-url]: https:2cents.dev/images/social-card.png "Social Card"
+[social-card-url]: https://www.2cents.dev/images/social-card.png "Social Card"
 [homepage-screenshot-url]: https:2cents.dev/images/homepage-screenshot.png "Homepage Screenshot"

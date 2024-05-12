@@ -4,11 +4,11 @@
 
 _Share your thoughts, whims and opinions with humanity_
 
-## Screenshots
+## 📸 Screenshots
 
 ![Homepage Screenshot][homepage-screenshot-url]
 
-## Installation
+## 💿 Installation
 
 ### System Requirements
 
@@ -40,13 +40,11 @@ npm run db:seed
 
 #### Start Application
 
-Next, run the application locally with the following command.
+Next, run the application locally with the following command. The application will run on port `3000`.
 
 ```shell
 npm run dev
 ```
-
-This will run the frontend on port `3000` and the backend server on port `3001`.
 
 ### Run the application test suite
 
@@ -62,7 +60,7 @@ Run the tests and view the results in an interactive UI.
 npm run test:ui
 ```
 
-## Feature Summary
+## ✨ Feature Summary
 
 - [x] 🟦 Built with TypeScript
 - [x] ⚛️ Uses React Hooks to encapsulate logic
@@ -73,7 +71,7 @@ npm run test:ui
 - [x] 🏗️ Semantic HTML
 - [x] 📱 Mobile responsive design
 
-## Improvement Ideas
+## 📈 Improvement Ideas
 
 With more time given to this project, I would consider the following ideas and features.
 
@@ -96,24 +94,12 @@ With more time given to this project, I would consider the following ideas and f
 11. Check application with assistive technologies
 12. Fully deploy API
 
-### Possible Features
+### ❇️ Possible Features
 
 1. Simple emoji reactions with a count
 2. Add ability to reply to a comment (consider maximum level of nesting)
 
-## Findings
-
-### Cross-origin Resource Sharing (CORS)
-
-I needed to add the express `cors` middleware in order to allow the frontend running at `http://localhost:3000` to communicate with the backend at `http://localhost:3001`.
-
-## Other Considerations
-
-### Framework
-
-When thinking about this craft assignment, I considered using a full-stack framework with which I am comfortable working. For me, that is Next.js. However, the testing story for end-to-end tests is still a work in progress, so I stuck with a React frontend and an Express.js backend.
-
-## Figma Design
+## 🎨 Figma Design
 
 A link to the Figma design file for this application is below.
 

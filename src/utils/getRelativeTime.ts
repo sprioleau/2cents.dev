@@ -3,8 +3,6 @@ import relativeTime from "dayjs/plugin/relativeTime";
 
 dayjs.extend(relativeTime);
 
-const TIMEZONE_OFFSET = 4 * 60 * 60 * 1000;
-
-export default function getRelativeTime(dateString: string): string {
-	return dayjs(new Date(dateString).getTime() - TIMEZONE_OFFSET).fromNow();
+export default function getRelativeTime(date: Date): string {
+	return dayjs(new Date(date).getTime()).fromNow();
 }

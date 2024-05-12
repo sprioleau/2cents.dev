@@ -1,10 +1,12 @@
 import styles from "./index.module.scss";
 
 import Message from "../Message";
-import useMessages from "../../hooks/useMessages";
+import { db } from "@/db";
+import { comments } from "@/db/schema";
+import { desc } from "drizzle-orm";
 
-export default function MessagesList() {
-	const { messages } = useMessages();
+export default async function MessagesList() {
+	const messages = await db.select().from(comments).orderBy(desc(comments.createdAt)).all();
 
 	return (
 		<ol className={styles["messages"]}>

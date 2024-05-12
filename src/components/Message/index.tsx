@@ -1,24 +1,16 @@
 import styles from "./index.module.scss";
 
+import { deleteComment } from "@/actions";
+import type { Message as TMessage } from "@/db/types";
+import getRelativeTime from "@/utils/getRelativeTime";
 import { Trash2 } from "lucide-react";
-import { deleteMessageById } from "../../api/fetchers";
-import useMessages from "../../hooks/useMessages";
-import type { Message as TMessage } from "../../types";
 import Button from "../Button";
-import getRelativeTime from "../../utils/getRelativeTime";
 
 type Props = {
 	message: TMessage;
 };
 
-export default function Message({ message: { id, name, message, created: createdAt } }: Props) {
-	const { refetch } = useMessages();
-
-	async function handleDeleteMessage(id: number) {
-		await deleteMessageById(id);
-		refetch();
-	}
-
+export default function Message({ message: { id, name, message, createdAt } }: Props) {
 	return (
 		<article className={styles["message"]}>
 			<main>
@@ -30,13 +22,23 @@ export default function Message({ message: { id, name, message, created: created
 					<span> • </span>
 					<span className={styles["timestamp"]}>{getRelativeTime(createdAt)}</span>
 				</div>
-				<Button
-					title="Delete"
-					onClick={() => handleDeleteMessage(id)}
-					addedClassName={styles["delete-button"]}
-				>
-					<Trash2 />
-				</Button>
+				<form action={deleteComment}>
+					<input
+						type="text"
+						name="id"
+						value={id}
+						hidden
+						readOnly
+						aria-hidden
+					/>
+					<Button
+						type="submit"
+						title="Delete"
+						addedClassName={styles["delete-button"]}
+					>
+						<Trash2 />
+					</Button>
+				</form>
 			</footer>
 		</article>
 	);

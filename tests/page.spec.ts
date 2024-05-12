@@ -57,12 +57,11 @@ test.describe("new message flow", () => {
 	test("can complete form, submit it and see new message", async ({ page }) => {
 		await page.goto("http://127.0.0.1:3000");
 
-		const uniqueId = Date.now().toString();
-
 		const nameInput = page.getByPlaceholder("Enter your name");
 		const messageTextarea = page.getByPlaceholder("Your message");
 		const submitButton = page.getByRole("button", { name: "Add your 2 cents" });
 
+		const uniqueId = Date.now().toString();
 		const name = `Jamie - ${uniqueId}`;
 		const message = `The world is yours! 🌎 - ${uniqueId}`;
 
@@ -94,20 +93,22 @@ test.describe("new message flow", () => {
 	test("can delete message", async ({ page }) => {
 		await page.goto("http://127.0.0.1:3000");
 
-		// const uniqueId = Date.now().toString();
+		const uniqueId = Date.now().toString();
+		const name = `Hector - ${uniqueId}`;
+		const message = `Soon to be forgotten - ${uniqueId}`;
 
 		const nameInput = page.getByPlaceholder("Enter your name");
 		const messageTextarea = page.getByPlaceholder("Your message");
 		const submitButton = page.getByRole("button", { name: "Add your 2 cents" });
 
-		await nameInput.fill("Hector");
-		await messageTextarea.fill("Soon to be forgotten");
+		await nameInput.fill(name);
+		await messageTextarea.fill(message);
 
 		// Submit
 		await submitButton.click();
 
 		// Locate message
-		const messageContainer = page.locator("article", { hasText: "Soon to be forgotten" });
+		const messageContainer = page.locator("article", { hasText: message });
 
 		// Locate delete button and click it
 		const deleteButton = messageContainer.getByRole("button", { name: "Delete" });

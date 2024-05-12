@@ -1,4 +1,6 @@
 import { Github } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 import styles from "./index.module.scss";
 
@@ -7,28 +9,23 @@ export default function Navbar() {
 		<nav>
 			<ul className={styles["nav-items"]}>
 				<li>
-					<a
+					<Link
 						href="/"
 						className={styles["logo"]}
 					>
-						<img
+						<Image
 							src="/images/logo-wordmark-url.svg"
 							alt="2cents logo"
 							width={220}
 							height={93}
+							priority
 						/>
-					</a>
+					</Link>
 				</li>
 				<li className={styles["byline"]}>
 					by{" "}
 					<a href="https://github.com/sprioleau">
-						<span>@sprioleau</span>{" "}
-						<span
-							role="img"
-							aria-label="GitHub logo"
-						>
-							<Github />
-						</span>
+						<span>@sprioleau</span> <Github />
 					</a>
 				</li>
 			</ul>

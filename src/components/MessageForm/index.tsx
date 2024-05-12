@@ -1,12 +1,12 @@
-import styles from "./index.module.scss";
+"use client";
 
+import { createComment } from "@/actions";
+import { messageFormDataSchema } from "@/lib/zod/schemas";
 import { Send } from "lucide-react";
 import { useRef, useState } from "react";
 import { z } from "zod";
-import { api } from "../../api";
-import useMessages from "../../hooks/useMessages";
-import { messageFormDataSchema } from "../../lib/zod/schemas";
 import Button from "../Button";
+import styles from "./index.module.scss";
 
 export default function MessageForm() {
 	const [errorMessages, setErrorMessages] = useState<
@@ -17,33 +17,6 @@ export default function MessageForm() {
 	});
 
 	const formRef = useRef<HTMLFormElement>(null);
-	const { refetch } = useMessages();
-
-	async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-		event.preventDefault();
-		const formData = new FormData(event.currentTarget);
-		const formDataObject = Object.fromEntries(formData.entries());
-
-		const parsedFormData = messageFormDataSchema.safeParse(formDataObject);
-
-		if (!parsedFormData.success) {
-			const errorsByField = parsedFormData.error.flatten().fieldErrors;
-
-			return setErrorMessages({
-				name: errorsByField.name?.join(", "),
-				message: errorsByField.message?.join(", "),
-			});
-		}
-
-		// Attempt to create a message
-		await api.createMessage(parsedFormData.data);
-
-		// Reset form
-		formRef?.current?.reset();
-
-		// Refetch messages
-		refetch();
-	}
 
 	function handleValidateName({ target: { value } }: React.FocusEvent<HTMLInputElement>) {
 		const newErrorValue = !value || value.length < 1 ? "Name is required" : undefined;
@@ -63,11 +36,16 @@ export default function MessageForm() {
 		}));
 	}
 
+	async function handleCreateComment(formData: FormData) {
+		await createComment(formData);
+		formRef.current?.reset();
+	}
+
 	return (
 		<form
-			className={styles["form"]}
-			onSubmit={handleSubmit}
+			action={handleCreateComment}
 			ref={formRef}
+			className={styles["form"]}
 		>
 			<fieldset className={styles["fieldset"]}>
 				<label
@@ -107,8 +85,8 @@ export default function MessageForm() {
 				</div>
 			</fieldset>
 			<Button
-				addedClassName={styles["submit-button"]}
 				type="submit"
+				addedClassName={styles["submit-button"]}
 			>
 				Add your 2 cents
 				<Send className={styles["submit-button-icon"]} />
